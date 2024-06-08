@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import Salary from './Salary'
 import useGlobalStore from '../store/globalStore'
-import '../styles/Form.css'
+import '../styles/form.css'
+import '../styles/progressBar.css'
 
 const Form = () => {
     const [page, setPage] = useState(0)
+    // const [width, setWidth] = useState(0)
     const {
         name,
         email,
@@ -14,6 +16,18 @@ const Form = () => {
         setEmail,
         setPhoneNumber
     } = useGlobalStore()
+    // const handleProgress = () => {
+    let width = 0
+    name !== '' ? width = width + 25 : null
+    email !== '' ? width = width + 25 : null
+    phoneNumber !== '' ? width = width + 25 : null
+    salary !== '' ? width = width + 25 : null
+
+    const progressBar = document.getElementById('progress') as HTMLDivElement
+    if (progressBar) {
+        progressBar.style.width = `${width}%`
+    }
+    // }
     return (
         <div className="form-container w-[65%] relative left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2">
             <form className="form">
@@ -38,7 +52,6 @@ const Form = () => {
 
 
                         <div>
-                            {/* <button onClick={(e) => e.preventDefault()} >← Back</button> */}
                             <button className=' right-0' onClick={() => setPage(1)}>Next →</button>
                         </div>
                     </>
@@ -56,7 +69,7 @@ const Form = () => {
 
                 {page === 2 &&
                     <>
-                        <h6 className='descr'>Thank you</h6>
+                        <h6 className='descr'>Thank you!</h6>
                         <h6 className='descr'>Here is your information</h6>
                         <p className='text-[#e8e8e8] mb-4 uppercase font-[500]'>Name: {name}</p>
                         <p className='text-[#e8e8e8] mb-4 uppercase font-[500]'>E-mail: {email}</p>
@@ -65,6 +78,9 @@ const Form = () => {
                         <button onClick={() => setPage(1)}>← Back</button>
                     </>
                 }
+                <div className="progress-loader">
+                    <div id='progress' className="progress"></div>
+                </div>
             </form>
         </div>
     )

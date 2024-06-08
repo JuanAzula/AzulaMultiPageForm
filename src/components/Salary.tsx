@@ -1,6 +1,6 @@
 import useGlobalStore from '../store/globalStore'
 
-import '../styles/Salary.css'
+import '../styles/salary.css'
 
 const Salary = () => {
     const { salary, setSalary } = useGlobalStore()
