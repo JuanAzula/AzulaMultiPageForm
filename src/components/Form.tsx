@@ -29,6 +29,9 @@ const Form = () => {
         setSalary
     } = useGlobalStore()
 
+    const getErrorMessage = (error: any) => {
+        return typeof error?.message === 'string' ? error.message : null;
+    };
 
     return (
         <div className="form-container w-[65%] relative left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2">
@@ -69,7 +72,7 @@ const Form = () => {
                                 onChange={(e) => setName(e.target.value)}
                             />
                             <label htmlFor="name">Name</label>
-                            {errors.name && <span>{errors.name.message}</span>}
+                            {errors.name && <span className='error-message'>{getErrorMessage(errors.name)}</span>}
                         </div>
 
                         <div className="input">
@@ -87,7 +90,7 @@ const Form = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                             <label htmlFor="email">E-mail</label>
-                            {errors.email && <span>{errors.email.message}</span>}
+                            {errors.email && <span className='error-message'>{getErrorMessage(errors.email)}</span>}
                         </div>
 
                         <div className="input">
@@ -105,7 +108,7 @@ const Form = () => {
                                 onChange={(e) => setPhoneNumber(e.target.value)}
                             />
                             <label htmlFor="phone-number">Phone number</label>
-                            {errors.phoneNumber && <span>{errors.phoneNumber.message}</span>}
+                            {errors.phoneNumber && <span className='error-message'>{getErrorMessage(errors.phoneNumber)}</span>}
                         </div>
 
 
@@ -155,7 +158,7 @@ const Form = () => {
                                     <input {...register('salary')} {...(salary === 'Mehr als 4.000' ? { checked: true } : {})} type="radio" name="radio" />
                                     <span>Mehr als 4.000</span>
                                 </label>
-                                {errors.salary && <span>{errors.salary.message}</span>}
+                                {errors.salary && <span className='error-message'>{getErrorMessage(errors.salary)}</span>}
                             </div>
                         </div>
                         <div>
