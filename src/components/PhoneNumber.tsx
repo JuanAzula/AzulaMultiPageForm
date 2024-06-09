@@ -51,6 +51,7 @@ const PhoneNumber = ({ register, errors }: SelectProps) => {
                   message: 'This is not a valid phone number',
                 },
               })}
+              data-testid="phonenumber"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               pattern="\d+"

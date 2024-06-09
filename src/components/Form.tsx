@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useGlobalStore from '../store/globalStore';
@@ -62,6 +63,7 @@ const Form = () => {
                               },
                             },
                           )}
+                          data-testid="name"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                         />
@@ -80,6 +82,7 @@ const Form = () => {
                               message: 'invalid email address',
                             },
                           })}
+                          data-testid="email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                         />

@@ -40,6 +40,7 @@ const Salary = ({ register, errors }: SelectProps) => {
             <span>1.000 - 2.000</span>
           </label>
           <label
+            data-testid="salary"
             onClick={() => setSalary('2.000 - 3.000')}
           >
             <input
