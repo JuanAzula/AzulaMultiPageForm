@@ -22,6 +22,7 @@ jobs:
             - name: Test
               run: |
                 npx playwright install
+                npm run dev
                 npm run test
             - name: Build
               run: npm run build 
