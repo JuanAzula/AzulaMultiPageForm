@@ -3,10 +3,10 @@ import Salary from './Salary'
 import useGlobalStore from '../store/globalStore'
 import '../styles/form.css'
 import '../styles/progressBar.css'
+import ProgressBar from './ProgressBar'
 
 const Form = () => {
     const [page, setPage] = useState(0)
-    // const [width, setWidth] = useState(0)
     const {
         name,
         email,
@@ -16,22 +16,23 @@ const Form = () => {
         setEmail,
         setPhoneNumber
     } = useGlobalStore()
-    // const handleProgress = () => {
-    let width = 0
-    name !== '' ? width = width + 25 : null
-    email !== '' ? width = width + 25 : null
-    phoneNumber !== '' ? width = width + 25 : null
-    salary !== '' ? width = width + 25 : null
 
-    const progressBar = document.getElementById('progress') as HTMLDivElement
-    if (progressBar) {
-        progressBar.style.width = `${width}%`
-    }
-    // }
+
+
     return (
         <div className="form-container w-[65%] relative left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2">
             <form className="form">
-                {page === 0 || page === 1 ? <h6 className="descr">Contact us</h6> : null}
+
+                {page === 0 || page === 1
+                    ?
+                    <h6 className="descr">Contact us</h6>
+                    :
+                    <>
+                        <h6 className='descr'>Thank you!</h6>
+                    </>}
+
+
+                <ProgressBar />
 
                 {page === 0 &&
                     <>
@@ -69,8 +70,6 @@ const Form = () => {
 
                 {page === 2 &&
                     <>
-                        <h6 className='descr'>Thank you!</h6>
-                        <h6 className='descr'>Here is your information</h6>
                         <p className='text-[#e8e8e8] mb-4 uppercase font-[500]'>Name: {name}</p>
                         <p className='text-[#e8e8e8] mb-4 uppercase font-[500]'>E-mail: {email}</p>
                         <p className='text-[#e8e8e8] mb-4 uppercase font-[500]'>Phone number: {phoneNumber}</p>
@@ -78,29 +77,10 @@ const Form = () => {
                         <button onClick={() => setPage(1)}>← Back</button>
                     </>
                 }
-                <div className="progress-loader">
-                    <div id='progress' className="progress"></div>
-                </div>
+
             </form>
         </div>
     )
 }
 
 export default Form
-
-
-
-{/* <div className="input"> */ }
-{/* <label htmlFor="phone-number">Salary indication</label> */ }
-{/* </div> */ }
-
-{/* <div className="input">
-    <label htmlFor="salary">Salary indication</label>
-    <select className='bg-zinc-300' autoComplete="off" name="email">
-        <option value="0 - 1.000">0 - 1.000</option>
-        <option value="1.000 - 2.000">1.000 - 2.000</option>
-        <option value="2.000 - 3.000">2.000 - 3.000</option>
-        <option value="3.000 - 4.000">3.000 - 4.000</option>
-        <option value="Mehr als 4.000">Mehr als 4.000</option>
-    </select>
-</div> */}
