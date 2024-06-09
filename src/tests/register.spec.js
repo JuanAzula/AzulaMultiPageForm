@@ -16,7 +16,8 @@ test('Register', async ({ page }) => {
   await page.getByRole('button', { name: 'Next →' }).click();
   await page.getByTestId('salary').click();
   await page.getByRole('button', { name: 'Finish →' }).click();
-  await page.waitForTimeout(1000);
+  await page.waitForSelector('.summary-title');
+  await page.waitForTimeout(500);
   await page.screenshot({ path: 'src/tests/screenshots/summary.png' });
 });
 

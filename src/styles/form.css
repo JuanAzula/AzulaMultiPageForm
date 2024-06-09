@@ -15,6 +15,15 @@
     text-align: center;
 }
 
+.form-container form .summary-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #e8e8e8;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+    text-align: center;
+}
+
 .form {
     display: flex;
     flex-direction: column;

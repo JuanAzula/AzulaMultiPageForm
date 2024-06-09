@@ -41,7 +41,7 @@ const Form = () => {
         {page === 0 || page === 1
           ? <h6 className="descr">Contact us</h6>
           : (
-            <h6 className="descr">Thank you!</h6>
+            <h6 className="summary-title">Thank you!</h6>
           )}
 
         <ProgressBar />
