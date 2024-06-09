@@ -8,6 +8,7 @@ import getErrorMessage from '../utils/const';
 import '../styles/form.css';
 import '../styles/progressBar.css';
 import '../styles/salary.css';
+import Summary from './Summary';
 
 const Form = () => {
   const [page, setPage] = useState(0);
@@ -21,20 +22,12 @@ const Form = () => {
   const {
     name,
     email,
-    phoneNumber,
-    salary,
     setName,
     setEmail,
   } = useGlobalStore();
 
   return (
-    <div className="form-container w-[65%]
-     relative
-     self-center
-     left-1/2
-     top-1/4 -translate-x-1/2 -translate-y-1/2
-     "
-    >
+    <div className="form-container w-[65%] relative self-center left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2">
       <form
         className="form"
         onSubmit={
@@ -114,6 +107,7 @@ const Form = () => {
                       </div>
                     </>
                     )}
+
         {page === 1
                     && (
                     <>
@@ -130,35 +124,19 @@ const Form = () => {
 
         {page === 2
                     && (
-                    <>
-                      <p className="text-[#e8e8e8] mb-4 uppercase font-[500]">
-                        Name:
-                        {name}
-                      </p>
-                      <p className="text-[#e8e8e8] mb-4 uppercase font-[500]">
-                        E-mail:
-                        {email}
-                      </p>
-                      <p className="text-[#e8e8e8] mb-4 uppercase font-[500]">
-                        Phone number:
-                        {phoneNumber}
-                      </p>
-                      <p className="text-[#e8e8e8] mb-4 uppercase font-[500]">
-                        Salary:
-                        {salary}
-                      </p>
-                      <button
-                        type="submit"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setPage(0);
-                        }}
-                      >
-                        ← Edit options
-                      </button>
-                    </>
+                      <>
+                        <Summary />
+                        <button
+                          type="submit"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setPage(0);
+                          }}
+                        >
+                          ← Edit options
+                        </button>
+                      </>
                     )}
-
       </form>
     </div>
   );

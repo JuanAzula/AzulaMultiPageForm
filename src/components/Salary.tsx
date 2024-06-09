@@ -52,7 +52,7 @@ const Salary = ({ register, errors }: SelectProps) => {
           <label onClick={() => setSalary('Mehr als 4.000')}>
             <input
               {...register('salary')}
-                            // {...(salary === 'Mehr als 4.000' ? { checked: true } : {})}
+              {...(salary === 'Mehr als 4.000' ? { checked: true } : {})}
               type="radio"
             />
             <span>Mehr als 4.000</span>
