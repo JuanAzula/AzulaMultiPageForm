@@ -3,7 +3,7 @@
     justify-content: center;
     position: relative;
     border-radius: 3px;
-    height: 28rem;
+    height: 32rem;
 }
 
 .form-container form .descr {
@@ -19,11 +19,12 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 5%;
 }
 
 .input,
 textarea {
-    margin: 1em 0 1em 0;
+    margin: 1em 0 2em 0;
     width: 100%;
     position: relative;
 }
@@ -117,23 +118,71 @@ textarea {
 
 }
 
+@media (max-width: 1200px) {
+    .form-container {
+        width: 100%;
+        height: 45rem;
+    }
+
+    .form {
+        margin-top: 30%;
+    }
+
+    .input,
+    textarea {
+        margin: 2em 0 2em 0;
+
+    }
+}
+
 @media (max-width: 850px) {
     .form-container {
-        width: 95%;
+        width: 100%;
         /* height: 35%; */
+    }
+
+    .form {
+        margin-top: 30%;
+    }
+
+    .input,
+    textarea {
+        margin: 0.5em 0 2em 0;
+
     }
 }
 
 @media (max-width: 500px) {
     .form-container {
-        width: 95%;
+        width: 100%;
         /* height: 45%; */
+        height: 28rem;
+    }
+
+    .form {
+        margin-top: 40%;
+    }
+
+    .input,
+    textarea {
+        margin: 0.5em 0 1em 0;
+
     }
 }
 
 @media (max-width: 670px) {
     .form-container {
-        width: 95%;
-        /* height: 55%; */
+        width: 100%;
+        height: 44rem;
+    }
+
+    .form {
+        margin-top: 88%;
+    }
+
+    .input,
+    textarea {
+        margin: 0.5em 0 1.5em 0;
+
     }
 }

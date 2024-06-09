@@ -1,14 +1,9 @@
-import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
+import getErrorMessage from '../utils/const';
 import useGlobalStore from '../store/globalStore';
 import '../styles/phoneNumber.css';
+import { SelectProps } from '../types/types';
 
-interface Props {
-  register: UseFormRegister<FieldValues>
-  errors: FieldErrors<FieldValues>
-  getErrorMessage: (error: any) => string
-}
-
-const PhoneNumber = ({ register, errors, getErrorMessage }: Props) => {
+const PhoneNumber = ({ register, errors }: SelectProps) => {
   const { phoneNumber, setPhoneNumber } = useGlobalStore();
 
   return (

@@ -1,13 +1,12 @@
-import Form from './components/Form'
-import './styles/App.css'
+import Form from './components/Form';
+import './styles/App.css';
 
 function App() {
-
   return (
-    <div className=' w-screen h-screen'>
+    <div className=" w-screen h-screen">
       <Form />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

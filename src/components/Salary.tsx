@@ -1,15 +1,10 @@
-import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
 import useGlobalStore from '../store/globalStore';
+import getErrorMessage from '../utils/const';
 
 import '../styles/salary.css';
+import { SelectProps } from '../types/types';
 
-interface Props {
-  register: UseFormRegister<FieldValues>
-  errors: FieldErrors<FieldValues>
-  getErrorMessage: (error: any) => string
-}
-
-const Salary = ({ register, errors, getErrorMessage }: Props) => {
+const Salary = ({ register, errors }: SelectProps) => {
   const { salary, setSalary } = useGlobalStore();
   return (
     <>

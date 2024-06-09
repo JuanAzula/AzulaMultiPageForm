@@ -2,16 +2,21 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useGlobalStore from '../store/globalStore';
 import ProgressBar from './ProgressBar';
+import PhoneNumber from './PhoneNumber';
+import Salary from './Salary';
+import getErrorMessage from '../utils/const';
 import '../styles/form.css';
 import '../styles/progressBar.css';
 import '../styles/salary.css';
-import PhoneNumber from './PhoneNumber';
-import Salary from './Salary';
 
 const Form = () => {
   const [page, setPage] = useState(0);
 
-  const { handleSubmit, register, formState: { errors } } = useForm();
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
 
   const {
     name,
@@ -22,10 +27,14 @@ const Form = () => {
     setEmail,
   } = useGlobalStore();
 
-  const getErrorMessage = (error: any) => (typeof error?.message === 'string' ? error.message : null);
-
   return (
-    <div className="form-container w-[65%] relative left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2">
+    <div className="form-container w-[65%]
+     relative
+     self-center
+     left-1/2
+     top-1/4 -translate-x-1/2 -translate-y-1/2
+     "
+    >
       <form
         className="form"
         onSubmit={
@@ -92,7 +101,6 @@ const Form = () => {
                         <PhoneNumber
                           register={register}
                           errors={errors}
-                          getErrorMessage={getErrorMessage}
                         />
                       </div>
 
@@ -112,7 +120,6 @@ const Form = () => {
                       <Salary
                         register={register}
                         errors={errors}
-                        getErrorMessage={getErrorMessage}
                       />
                       <div>
                         <button type="submit" onClick={() => setPage(0)}>← Back</button>
@@ -147,7 +154,7 @@ const Form = () => {
                           setPage(0);
                         }}
                       >
-                        ← Back
+                        ← Edit options
                       </button>
                     </>
                     )}
