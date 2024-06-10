@@ -1,30 +1,84 @@
-# React + TypeScript + Vite
+# Multi page application form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Setup
 
-Currently, two official plugins are available:
+### Prerequisites
+Ensure you have the following installed:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js (v18 or later)
+- npm (v6 or later) or Yarn (v1.22 or later)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Installation
 
-- Configure the top-level `parserOptions` property like this:
+- 1. Clone the repository:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+git clone https://github.com/JuanAzula/AzulaMultiPageForm.git
+cd "Your Repo Name"
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- 2. Install dependencies:
+Using npm:
+
+```bash
+npm install
+```
+Or using Yarn:
+```bash
+yarn install
+```
+
+### Running the Project
+
+- 1. Start the development server:
+Using npm:
+```bash
+npm run dev
+```
+Or using Yarn:
+```bash
+yarn dev
+```
+The application will be available at http://localhost:5173.
+
+### Running Tests
+
+- 1. Ensure the development server is running:
+Using npm:
+```bash
+npm run dev
+```
+Or using Yarn:
+```bash
+yarn dev
+```
+The application will be available at http://localhost:5173.
+
+- 2. Run End-to-End(E2E) and screenshot tests with Playwright in a second terminal:
+Open a second terminal and execute the following command:
+Using npm:
+```bash
+npm run test
+```
+Or using Yarn:
+```bash
+yarn test
+```
+This command will execute the Playwright tests to ensure the application behaves as expected.
+
+## Additional Information
+
+- The project uses Vite for fast development builds.
+- Zustand is used for state management.
+- React Hook Form manages the form state and validation.
+- Tailwind CSS and pure CSS are used for styling.
+- GitHub Actions handles the CI/CD pipelines.
+If you encounter any issues or have further questions, feel free to contact me.
+
+
+
+
+<!-- - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list -->
